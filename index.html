@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AKA Hapiz Website</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:linear-gradient(-45deg,#020617,#0f172a,#1e293b,#334155);
+      background-size:400% 400%;
+      animation:bg 15s ease infinite;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    @keyframes bg{
+      0%{
+        background-position:0% 50%;
+      }
+
+      50%{
+        background-position:100% 50%;
+      }
+
+      100%{
+        background-position:0% 50%;
+      }
+    }
+
+    .loading{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:#020617;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      z-index:9999;
+      animation:hilang 3s forwards;
+    }
+
+    .loading h2{
+      font-size:2.5rem;
+      color:#38bdf8;
+      animation:zoom 1s infinite alternate;
+    }
+
+    @keyframes zoom{
+      from{
+        transform:scale(1);
+      }
+
+      to{
+        transform:scale(1.1);
+      }
+    }
+
+    @keyframes hilang{
+      0%{
+        opacity:1;
+      }
+
+      85%{
+        opacity:1;
+      }
+
+      100%{
+        opacity:0;
+        visibility:hidden;
+      }
+    }
+
+    .container{
+      width:90%;
+      max-width:1100px;
+      margin:auto;
+      padding:50px 0;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.1);
+      backdrop-filter:blur(15px);
+      border-radius:30px;
+      padding:50px;
+      text-align:center;
+      box-shadow:0 8px 30px rgba(0,0,0,0.3);
+
+      animation:muncul 1.2s ease;
+    }
+
+    @keyframes muncul{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .profile{
+      width:170px;
+      height:170px;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid #38bdf8;
+      transition:0.4s;
+      margin-bottom:25px;
+    }
+
+    .profile:hover{
+      transform:scale(1.08) rotate(3deg);
+      box-shadow:0 0 30px #38bdf8;
+    }
+
+    h1{
+      font-size:3.2rem;
+      margin-bottom:10px;
+    }
+
+    h1 span{
+      color:#38bdf8;
+    }
+
+    .typing{
+      color:#cbd5e1;
+      margin-bottom:30px;
+      font-size:1.2rem;
+    }
+
+    p{
+      color:#e2e8f0;
+      line-height:2;
+      margin-top:25px;
+      font-size:1rem;
+    }
+
+    .buttons{
+      margin-top:35px;
+      display:flex;
+      justify-content:center;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    button{
+      padding:14px 28px;
+      border:none;
+      border-radius:15px;
+      font-size:1rem;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn1{
+      background:#38bdf8;
+      color:black;
+    }
+
+    .btn1:hover{
+      transform:translateY(-5px);
+      box-shadow:0 0 25px #38bdf8;
+    }
+
+    .btn2{
+      background:transparent;
+      border:2px solid #38bdf8;
+      color:white;
+    }
+
+    .btn2:hover{
+      background:#38bdf8;
+      color:black;
+      transform:translateY(-5px);
+    }
+
+    .social{
+      margin-top:40px;
+      display:flex;
+      justify-content:center;
+      gap:25px;
+      flex-wrap:wrap;
+    }
+
+    .social a{
+      font-size:2rem;
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    .social a:hover{
+      transform:scale(1.3);
+    }
+
+    .box{
+      margin-top:35px;
+      padding:25px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      transition:0.3s;
+    }
+
+    .box:hover{
+      transform:translateY(-5px);
+      background:rgba(255,255,255,0.08);
+    }
+
+    .box h2{
+      margin-bottom:15px;
+      color:#38bdf8;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px;
+      color:#94a3b8;
+    }
+
+    @media(max-width:700px){
+
+      .card{
+        padding:35px 25px;
+      }
+
+      h1{
+        font-size:2.3rem;
+      }
+
+      .profile{
+        width:130px;
+        height:130px;
+      }
+
+      .typing{
+        font-size:1rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="loading">
+    <h2>Welcome To My Website 🚀</h2>
+  </div>
+
+  <div class="container">
+
+    <div class="card">
+
+      <img 
+      class="profile"
+      src="https://i.imgur.com/6VBx3io.png"
+      alt="Profile">
+
+      <h1>Halo, Aku <span>Keysha</span> 👋</h1>
+
+      <div class="typing">
+        Student • Gamer • Badminton • Future Programmer
+      </div>
+
+      <p>
+        Halo semuanya, nama aku Keysha. Aku adalah seorang pelajar yang memiliki banyak hobi dan ketertarikan di dunia digital maupun olahraga. Aku suka belajar hal baru, terutama tentang teknologi, website, dan desain modern karena menurutku dunia teknologi akan terus berkembang di masa depan. Selain itu aku juga suka bermain badminton karena olahraga ini melatih fokus, kecepatan, dan membuat tubuh tetap sehat. Bermain badminton bersama teman-teman juga selalu terasa seru dan menyenangkan bagiku.
+      </p>
+
+      <div class="box">
+        <h2>🎮 Gaming</h2>
+
+        <p>
+          Gaming menjadi salah satu hobiku yang paling sering aku lakukan saat waktu luang. Aku suka bermain game karena bisa menghilangkan rasa bosan dan membuat pikiran lebih santai setelah menjalani aktivitas sehari-hari. Selain seru, beberapa game juga melatih strategi, kerja sama tim, dan kemampuan berpikir cepat. Dunia gaming menurutku bukan hanya hiburan, tetapi juga tempat untuk belajar kreativitas dan komunikasi dengan banyak orang.
+        </p>
+      </div>
+
+      <div class="box">
+        <h2>💻 Technology</h2>
+
+        <p>
+          Aku sangat tertarik dengan dunia teknologi dan pemrograman karena aku suka melihat bagaimana sebuah website dibuat dari nol hingga menjadi keren dan interaktif. Saat ini aku sedang belajar coding dan mencoba membuat website sendiri agar kemampuan yang aku miliki terus berkembang. Harapanku suatu hari nanti aku bisa menjadi seseorang yang sukses di bidang teknologi dan membuat sesuatu yang bermanfaat bagi banyak orang.
+        </p>
+      </div>
+
+      <div class="box">
+        <h2>🎧 Music</h2>
+
+        <p>
+          Musik adalah salah satu hal yang selalu menemani keseharianku. Aku suka mendengarkan musik saat sedang santai, belajar, bermain game, ataupun ketika ingin menenangkan pikiran. Aku sangat suka Reality Club karena lagu-lagunya punya suasana yang aesthetic, nyaman didengar malam hari, dan liriknya terasa relate dengan kehidupan anak muda. Aku juga suka Tulus karena cara bernyanyi dan makna lagu-lagunya terasa tenang, dewasa, dan bisa memberikan motivasi ataupun perasaan hangat saat didengarkan. Selain itu aku juga menyukai Rex Orange County karena musiknya unik, santai, dan memiliki vibes yang membuat suasana hati terasa lebih nyaman. Bagiku musik bukan cuma hiburan, tetapi juga bisa menjadi teman di berbagai suasana dan membuat hari terasa lebih hidup.
+        </p>
+      </div>
+
+      <div class="buttons">
+
+        <button class="btn1"
+        onclick="showAbout()">
+          About Me
+        </button>
+
+        <button class="btn2"
+        onclick="window.open('https://instagram.com/achmdlimau')">
+          @achmdlimau
+        </button>
+
+      </div>
+
+      <div class="social">
+
+        <a href="#">🏸</a>
+        <a href="#">🎮</a>
+        <a href="#">💻</a>
+        <a href="#">🎧</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 akahapiz Website
+  </footer>
+
+  <script>
+
+    function showAbout(){
+
+      alert(
+`Hi, aku Keysha 👋
+
+Terima kasih sudah mengunjungi websiteku 😄
+
+Aku suka teknologi, badminton, gaming,
+dan sedang belajar menjadi programmer 🚀`
+      )
+
+    }
+
+  </script>
+
+</body>
+</html>
